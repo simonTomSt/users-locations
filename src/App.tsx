@@ -1,17 +1,8 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { api } from 'shared/api'
-import tw from 'twin.macro'
-
-const Main = tw.main`
-  text-red-200
-`
+import { MainLayout } from 'components/templates'
 
 export const App = () => {
-  useEffect(() => {
-    api.get('/52.31.106.220')
-  }, [])
-  return <Main>sdsdsds</Main>
+  return <MainLayout>sdsdsds</MainLayout>
 }
 
 export default App
