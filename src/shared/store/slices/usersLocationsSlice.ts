@@ -2,13 +2,14 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { api } from 'shared/api'
 import { ResponseStatus } from 'shared/constants'
 import { isFalse } from 'shared/functions'
-import {
+
+import type {
   ApiError,
   ApiResponse,
   ResponseStatusState,
   UserLocation
 } from 'shared/types'
-import { RootState } from '../store'
+import type { RootState } from '../store'
 
 interface UsersLocationsState extends ResponseStatusState {
   locations: UserLocation[]

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { MainLayout } from 'components/templates'
 import { useDispatch } from 'react-redux'
 import { fetchUserIP } from 'shared/store'
