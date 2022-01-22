@@ -1,4 +1,4 @@
-export interface Language {
+interface Language {
   code: string
   name: string
   native: string
@@ -47,7 +47,7 @@ export interface Security {
   threat_types?: any
 }
 
-export interface IpResponse {
+export interface UserLocation {
   ip: string
   hostname: string
   type: string
