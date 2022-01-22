@@ -1,5 +1,5 @@
 import tw from 'twin.macro'
-import type { ReactNode } from 'react'
+import type { ReactNode, HTMLAttributes } from 'react'
 
 const StyledPaper = tw.article`
     bg-white
@@ -10,7 +10,8 @@ const StyledPaper = tw.article`
 
 type PaperProps = {
   children: ReactNode
-}
+} & HTMLAttributes<HTMLElement>
+
 export const Paper = ({ children }: PaperProps): JSX.Element => (
   <StyledPaper>{children}</StyledPaper>
 )
