@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchUserIP } from 'shared/store'
+import { MainLayout } from 'components/templates'
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -8,7 +9,7 @@ export const App = () => {
     dispatch(fetchUserIP())
   }, [dispatch])
 
-  return <div>sdsdsds</div>
+  return <MainLayout>sdsdsds</MainLayout>
 }
 
 export default App

@@ -1,1 +1,1 @@
-export const isFalse = (value: any) => value === false
+export const isFalse = (value: unknown) => value === false
