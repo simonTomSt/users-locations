@@ -1,13 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { api } from 'shared/api'
+import {
+  ApiError,
+  ApiResponse,
+  ResponseStatusState,
+  UserLocation
+} from 'shared/types'
 import { ResponseStatus } from 'shared/constants'
 import { isFalse } from 'shared/functions'
-import {
-  ResponseStatusState,
-  ApiResponse,
-  ApiError
-} from 'types/response-status-state'
-import { UserLocation } from 'types/user-locations'
+import { RootState } from '../store'
 
 interface UserLocationState extends ResponseStatusState {
   location?: UserLocation
@@ -47,3 +48,6 @@ export const userLocationSlice = createSlice({
 })
 
 export const userLocationReducer = userLocationSlice.reducer
+
+export const selectCurrentUserLocation = (state: RootState) =>
+  state.userLocation
