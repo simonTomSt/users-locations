@@ -11,11 +11,11 @@ import type {
 } from 'shared/types'
 import type { RootState } from '../store'
 
-interface UsersLocationsState extends ResponseStatusState {
+interface SearchLocationsState extends ResponseStatusState {
   locations: UserLocation[]
 }
 
-const initialState: UsersLocationsState = {
+const initialState: SearchLocationsState = {
   locations: []
 }
 
@@ -31,7 +31,7 @@ export const fetchLocation = createAsyncThunk<ApiResponse, string>(
   }
 )
 
-export const usersLocationsSlice = createSlice({
+export const searchLocationsSlice = createSlice({
   name: 'users-locations',
   initialState,
   reducers: {},
@@ -50,6 +50,6 @@ export const usersLocationsSlice = createSlice({
   }
 })
 
-export const usersLocationsReducer = usersLocationsSlice.reducer
+export const searchLocationsReducer = searchLocationsSlice.reducer
 
-export const selectUsersLocation = (state: RootState) => state.usersLocations
+export const selectSearchLocations = (state: RootState) => state.searchLocations

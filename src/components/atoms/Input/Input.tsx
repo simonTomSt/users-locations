@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { InputHTMLAttributes } from 'react'
 import styled from '@emotion/styled'
 import { ifProp } from 'styled-tools'
 import tw from 'twin.macro'
@@ -8,7 +8,7 @@ type InputStyleProps = {
   error?: boolean
 }
 
-export type InputProps = InputStyleProps & HTMLAttributes<HTMLInputElement>
+export type InputProps = InputStyleProps & InputHTMLAttributes<HTMLInputElement>
 
 export const Input = styled.input<InputStyleProps>`
   ${tw`
@@ -20,14 +20,20 @@ export const Input = styled.input<InputStyleProps>`
     rounded
     transition-colors
     duration-300
-    focus:!border-purple-500
-    focus:outline-none
-    focus:shadow-lg
-    `}
+    w-full
+  `}
   ${ifProp('error', tw`border-red-400`)}
     
   &::placeholder {
     ${tw`text-gray-400`}
+  }
+
+  &:focus {
+    ${tw`
+      !border-purple-500
+      outline-none
+      shadow-lg
+    `}
   }
 
   &:disabled {

@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { isProd } from 'shared/constants'
-import { usersLocationsReducer, userLocationReducer } from './slices'
+import { searchLocationsReducer, userLocationReducer } from './slices'
 
 export const store = configureStore({
   reducer: {
     userLocation: userLocationReducer,
-    usersLocations: usersLocationsReducer
+    searchLocations: searchLocationsReducer
   },
   devTools: !isProd
 })

@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react'
+import { ButtonHTMLAttributes } from 'react'
 import { ReactComponent as SpinnerIcon } from 'assets/icons'
 import { ifProp } from 'styled-tools'
 import tw from 'twin.macro'
@@ -39,8 +39,7 @@ export const StyledButton = styled.button<{ $loading: boolean }>`
 export type ButtonProps = {
   loading?: boolean
   loadingText?: string
-  disabled?: boolean
-} & HTMLAttributes<HTMLButtonElement>
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button = ({
   loading = false,

@@ -1,2 +1,2 @@
 export * from './userLocationSlice'
-export * from './usersLocationsSlice'
+export * from './searchLocationsSlice'

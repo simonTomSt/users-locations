@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchUserIP } from 'shared/store'
 import { MainLayout } from 'components/templates'
+import { SearchForm } from 'components/organisms'
 
 export const App = () => {
   const dispatch = useDispatch()
@@ -9,7 +10,11 @@ export const App = () => {
     dispatch(fetchUserIP())
   }, [dispatch])
 
-  return <MainLayout>sdsdsds</MainLayout>
+  return (
+    <MainLayout>
+      <SearchForm />
+    </MainLayout>
+  )
 }
 
 export default App
