@@ -20,7 +20,7 @@ const initialState: SearchLocationsState = {
 }
 
 export const fetchLocation = createAsyncThunk<ApiResponse, string>(
-  'users-locations/fetchLocation',
+  'search-locations/fetchLocation',
   async (ipAddress, thunkAPI) => {
     const response = await api.get(ipAddress)
 
@@ -32,7 +32,7 @@ export const fetchLocation = createAsyncThunk<ApiResponse, string>(
 )
 
 export const searchLocationsSlice = createSlice({
-  name: 'users-locations',
+  name: 'search-locations',
   initialState,
   reducers: {},
   extraReducers: builder => {
