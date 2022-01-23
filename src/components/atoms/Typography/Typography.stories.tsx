@@ -20,7 +20,7 @@ const allTypography = () => (
 )
 
 export default {
-  title: 'Typography/Typography',
+  title: 'Atoms/Typography',
   component: allTypography
 } as Meta
 

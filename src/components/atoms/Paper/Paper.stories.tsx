@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Paper> = args => (
   <Paper {...args}>Paper component</Paper>
 )
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Default = Template.bind({})
+Default.args = {
   className: 'h-5 w-5'
 }
