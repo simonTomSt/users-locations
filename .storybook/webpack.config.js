@@ -9,12 +9,12 @@ module.exports = ({ config }) => {
         loader: 'postcss-loader',
         options: {
           postcssOptions: {
-            ident: 'postcss',
-            config: path.resolve(__dirname, '../postcss.config.js')
+            plugins: [require('tailwindcss'), require('autoprefixer')]
           }
         }
       }
-    ]
+    ],
+    include: path.resolve(__dirname, '../')
   })
 
   return config

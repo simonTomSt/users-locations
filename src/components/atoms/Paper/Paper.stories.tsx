@@ -15,6 +15,4 @@ const Template: ComponentStory<typeof Paper> = args => (
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  className: 'h-5 w-5'
-}
+Default.args = {}

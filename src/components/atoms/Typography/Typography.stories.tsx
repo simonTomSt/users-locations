@@ -5,9 +5,9 @@ import * as AllTypographies from './index'
 const allTypography = () => (
   <table>
     {Object.entries(AllTypographies).map(([name, Typography]) => (
-      <tr key={name}>
+      <tr key={name} className="mb-4 flex justify-between items-center">
         <td>
-          <h4 className="mr-4">{name}</h4>
+          <h4 className="mr-40">{name}</h4>
         </td>
         <td>
           <Typography>

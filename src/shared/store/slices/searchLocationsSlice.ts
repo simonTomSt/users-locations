@@ -7,12 +7,12 @@ import type {
   ApiError,
   ApiResponse,
   ResponseStatusState,
-  UserLocation
+  LocationData
 } from 'shared/types'
 import type { RootState } from '../store'
 
 interface SearchLocationsState extends ResponseStatusState {
-  locations: UserLocation[]
+  locations: LocationData[]
 }
 
 const initialState: SearchLocationsState = {

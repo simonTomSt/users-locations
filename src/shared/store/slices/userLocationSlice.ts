@@ -7,17 +7,17 @@ import type {
   ApiError,
   ApiResponse,
   ResponseStatusState,
-  UserLocation
+  LocationData
 } from 'shared/types'
 import type { RootState } from '../store'
 
 interface UserLocationState extends ResponseStatusState {
-  location?: UserLocation
+  location?: LocationData
 }
 
 const initialState: UserLocationState = {}
 
-export const fetchUserIP = createAsyncThunk<UserLocation>(
+export const fetchUserIP = createAsyncThunk<LocationData>(
   'user-location/fetchUserIP',
   async (_, thunkAPI) => {
     const response = await api.get<ApiResponse>('/check')

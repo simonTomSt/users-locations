@@ -1,4 +1,5 @@
 import { ResponseStatus } from 'shared/constants'
+import { LocationData } from './locations-api'
 
 export interface ApiError {
   code: number
@@ -11,7 +12,7 @@ export interface ApiErrorResponse {
   error: ApiError
 }
 
-export type ApiResponse = UserLocation & ApiErrorResponse
+export type ApiResponse = LocationData & ApiErrorResponse
 
 export interface ResponseStatusState {
   status?: ResponseStatus

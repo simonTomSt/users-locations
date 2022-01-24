@@ -8,5 +8,18 @@ module.exports = {
   framework: '@storybook/react',
   core: {
     builder: 'webpack5'
-  }
+  },
+  addons: [
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        cssLoaderOptions: {
+          importLoaders: 1
+        },
+        postcssLoaderOptions: {
+          implementation: require('postcss')
+        }
+      }
+    }
+  ]
 }

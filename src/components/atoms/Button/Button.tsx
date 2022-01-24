@@ -10,9 +10,6 @@ export const ButtonLoading = styled.span`
      items-center
      justify-center
    `}
-  & > svg {
-    ${tw`mr-2`}
-  }
 `
 export const StyledButton = styled.button<{ $loading: boolean }>`
   ${tw`
@@ -53,7 +50,7 @@ export const Button = ({
       children
     ) : (
       <ButtonLoading>
-        <SpinnerIcon width={20} />
+        <SpinnerIcon className="w-5 mr-2" />
         {loadingText}
       </ButtonLoading>
     )}

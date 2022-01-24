@@ -47,7 +47,7 @@ export interface Security {
   threat_types?: any
 }
 
-export interface UserLocation {
+export interface LocationData {
   ip: string
   hostname: string
   type: string
