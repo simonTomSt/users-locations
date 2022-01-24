@@ -9,14 +9,16 @@ import { FormValues, initialValues, validationSchema } from './formSchema'
 
 const Form = tw(FormikForm)`
     flex
-    items-end
     justify-between
+    items-center
+    w-full
+    h-36
 `
 
 export const SearchForm = (): JSX.Element => {
   const dispatch = useDispatch()
   const { status, error } = useSelector(selectSearchLocations)
-  const { pending } = useStatusState(status)
+  const { pending, rejected } = useStatusState(status)
 
   const onSubmit = (
     { ipAddress }: FormValues,
@@ -36,13 +38,14 @@ export const SearchForm = (): JSX.Element => {
         <Form>
           <FormField
             name="ipAddress"
-            className="d-none"
             label="Provide IP Address:"
             placeholder="Type ip to search its location"
             errorMessage={error?.info}
+            error={rejected}
+            className="h-24"
           />
 
-          <Button loading={pending} type="submit">
+          <Button loading={pending} type="submit" className="!ml-4 mt4">
             Search
           </Button>
         </Form>

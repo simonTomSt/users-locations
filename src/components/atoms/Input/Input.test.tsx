@@ -5,9 +5,7 @@ import { Input, InputProps } from './Input'
 import { ElementRole } from 'shared/constants'
 
 const MOCK_DATA = {
-  LABEL_TEXT: 'Input label',
-  PLACEHOLDER_TEXT: 'Input placeholder',
-  ERROR_TEXT: 'Input error text'
+  PLACEHOLDER_TEXT: 'Input placeholder'
 }
 
 describe('Input', () => {
