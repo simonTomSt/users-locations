@@ -10,6 +10,11 @@ const Main = tw.main`
   mx-auto
   max-w-[75rem]
   xl:px-0
+  grid
+  grid-cols-3 
+  gap-4
+  grid-rows-3 
+  grid-flow-col
 `
 
 export const MainLayout = ({ children }: MainLayoutProps): JSX.Element => (

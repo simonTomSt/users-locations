@@ -79,3 +79,12 @@ export const selectLastSearchLocationDetails = (state: RootState) => {
     region: lastLocation.region_name
   }
 }
+export const selectLastLocationCoordinates = (state: RootState) => {
+  const lastLocation = state.searchLocations.locations.slice(-1)[0]
+  if (!lastLocation) return null
+
+  return {
+    lat: lastLocation.latitude,
+    lng: lastLocation.longitude
+  }
+}

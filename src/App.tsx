@@ -2,7 +2,11 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchUserIP } from 'shared/store'
 import { MainLayout } from 'components/templates'
-import { LastSearchDetails, SearchForm } from 'components/organisms'
+import {
+  LastSearchDetails,
+  LastSearchMap,
+  SearchForm
+} from 'components/organisms'
 
 export const App = () => {
   // const dispatch = useDispatch()
@@ -12,8 +16,9 @@ export const App = () => {
 
   return (
     <MainLayout>
-      <SearchForm />
+      <LastSearchMap />
       <LastSearchDetails />
+      <SearchForm />
     </MainLayout>
   )
 }
