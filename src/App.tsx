@@ -6,22 +6,24 @@ import {
   LastSearchDetails,
   LastSearchMap,
   SearchForm,
-  SearchList
+  SearchList,
+  UserLocationDetails,
+  UserMapCard
 } from 'components/organisms'
 
 export const App = () => {
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(fetchUserIP())
-  // }, [dispatch])
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchUserIP())
+  }, [dispatch])
 
   return (
     <MainLayout>
       <SearchList />
-      <LastSearchMap />
+      <UserMapCard />
       <SearchForm />
       <LastSearchMap />
-      <LastSearchDetails />
+      <UserLocationDetails />
       <LastSearchDetails />
     </MainLayout>
   )
