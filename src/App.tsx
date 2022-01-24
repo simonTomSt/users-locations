@@ -5,7 +5,8 @@ import { MainLayout } from 'components/templates'
 import {
   LastSearchDetails,
   LastSearchMap,
-  SearchForm
+  SearchForm,
+  SearchList
 } from 'components/organisms'
 
 export const App = () => {
@@ -16,6 +17,7 @@ export const App = () => {
 
   return (
     <MainLayout>
+      <SearchList />
       <LastSearchMap />
       <LastSearchDetails />
       <SearchForm />

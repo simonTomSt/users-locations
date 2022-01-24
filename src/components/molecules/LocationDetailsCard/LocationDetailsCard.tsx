@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
-import { H2, H4, Paper, Paragraph } from 'components/atoms'
-import { ReactComponent as BarsLoader } from 'assets/icons/bars-loader.svg'
+import { BarsLoader, H2, H4, Paper, Paragraph } from 'components/atoms'
 import tw from 'twin.macro'
 
 export type LocationDetailsCardProps = {
@@ -17,16 +16,6 @@ const DetailItem = styled.div`
   break-inside: avoid-column;
 `
 
-const Loader = styled(BarsLoader)`
-  ${tw`
-    absolute 
-    left-1/2 
-    top-1/2 
-    w-12
-  `}
-  transform: translate(-50%, -50%);
-`
-
 export const LocationDetailsCard = ({
   title,
   details,
@@ -35,7 +24,7 @@ export const LocationDetailsCard = ({
   <Paper className="min-h-[26rem]">
     <H2 className="mb-4 capitalize">{title}</H2>
     {pending ? (
-      <Loader />
+      <BarsLoader />
     ) : !!details ? (
       Object.entries(details).map(([name, value]) => (
         <DetailItem key={name}>
