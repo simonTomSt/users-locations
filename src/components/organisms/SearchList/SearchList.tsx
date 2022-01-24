@@ -19,6 +19,7 @@ export const SearchList = () => {
       ) : (
         <Virtuoso
           data={locations}
+          style={{ height: 'calc(100% - 2rem)' }}
           itemContent={(index, { ip, country_name, city }) => (
             <LocationListItem
               key={index}
