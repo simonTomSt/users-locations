@@ -5,4 +5,5 @@ export const Paper = tw.article`
     shadow-xl
     rounded-lg
     p-6
+    relative
 `

@@ -7,6 +7,7 @@ const EXAMPLE_DATA = {
   zip: '90013',
   city: 'Los Angeles'
 }
+
 export default {
   title: 'Molecules/LocationDetailsCard',
   component: LocationDetailsCard,

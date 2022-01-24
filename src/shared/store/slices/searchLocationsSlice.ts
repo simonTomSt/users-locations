@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { api } from 'shared/api'
-import { ResponseStatus } from 'shared/constants'
+import { ResponseStatus, StorageKey } from 'shared/constants'
 import { isFalse } from 'shared/functions'
+import { sessionStorageManager } from 'shared/functions'
 
 import type {
   ApiError,
@@ -15,19 +16,30 @@ interface SearchLocationsState extends ResponseStatusState {
   locations: LocationData[]
 }
 
+const storedLocations = sessionStorageManager<LocationData[]>(
+  StorageKey.Searches
+).getValue([])
+
 const initialState: SearchLocationsState = {
-  locations: []
+  locations: storedLocations
 }
 
 export const fetchLocation = createAsyncThunk<ApiResponse, string>(
   'search-locations/fetchLocation',
   async (ipAddress, thunkAPI) => {
-    const response = await api.get(ipAddress)
+    const { data } = await api.get(ipAddress)
 
-    if (isFalse(response.data?.success))
-      return thunkAPI.rejectWithValue(response.data.error)
+    if (isFalse(data?.success)) {
+      return thunkAPI.rejectWithValue(data.error)
+    }
 
-    return response.data
+    const updatedLocations = [...storedLocations]
+    updatedLocations.push(data)
+    sessionStorageManager<LocationData[]>(StorageKey.Searches).setValue(
+      updatedLocations
+    )
+
+    return data
   }
 )
 
@@ -53,3 +65,17 @@ export const searchLocationsSlice = createSlice({
 export const searchLocationsReducer = searchLocationsSlice.reducer
 
 export const selectSearchLocations = (state: RootState) => state.searchLocations
+export const selectSearchLocationStatus = (state: RootState) =>
+  state.searchLocations.status
+export const selectLastSearchLocationDetails = (state: RootState) => {
+  const lastLocation = state.searchLocations.locations.slice(-1)[0]
+  if (!lastLocation) return null
+
+  return {
+    flag: lastLocation.location.country_flag_emoji,
+    capital: lastLocation.location.capital,
+    city: lastLocation.city,
+    zip: lastLocation.zip,
+    region: lastLocation.region_name
+  }
+}

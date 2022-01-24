@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
-import { ReactComponent as SpinnerIcon } from 'assets/icons'
+import { ReactComponent as SpinnerIcon } from 'assets/icons/spinner.svg'
 import { ifProp } from 'styled-tools'
 import tw from 'twin.macro'
 import styled from '@emotion/styled'
