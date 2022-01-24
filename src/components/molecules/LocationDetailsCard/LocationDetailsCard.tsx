@@ -21,17 +21,26 @@ export const LocationDetailsCard = ({
   details,
   pending
 }: LocationDetailsCardProps): JSX.Element => (
-  <Paper className="min-h-[26rem]">
-    <H2 className="mb-4 capitalize">{title}</H2>
+  <Paper className="min-h-[18rem]">
+    <H2 className="mb-4">{title}</H2>
     {pending ? (
       <BarsLoader />
     ) : !!details ? (
-      Object.entries(details).map(([name, value]) => (
-        <DetailItem key={name}>
-          <H4 className="text-gray-500 mb-0 capitalize">{name}</H4>
-          <Paragraph className="text-gray-400">{value}</Paragraph>
-        </DetailItem>
-      ))
+      <div
+        style={{
+          columns: '2 auto',
+          height: '100%',
+          maxHeight: '15rem',
+          columnFill: 'auto'
+        }}
+      >
+        {Object.entries(details).map(([name, value]) => (
+          <DetailItem key={name}>
+            <H4 className="text-gray-500 mb-0 capitalize">{name}</H4>
+            <Paragraph className="text-gray-400">{value}</Paragraph>
+          </DetailItem>
+        ))}
+      </div>
     ) : (
       <Paragraph>No searches</Paragraph>
     )}

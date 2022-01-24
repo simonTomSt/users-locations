@@ -13,7 +13,7 @@ export const LastSearchDetails = (): JSX.Element => {
 
   return (
     <LocationDetailsCard
-      title="Last Search"
+      title="Last search details"
       details={details}
       pending={pending}
     />

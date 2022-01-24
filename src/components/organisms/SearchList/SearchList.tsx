@@ -10,7 +10,7 @@ export const SearchList = () => {
   const { pending } = useStatusState(status)
 
   return (
-    <Paper>
+    <Paper className="row-span-3">
       <H2>Your searches</H2>
       {!locations.length ? (
         <Paragraph className="mt-5">No searches</Paragraph>

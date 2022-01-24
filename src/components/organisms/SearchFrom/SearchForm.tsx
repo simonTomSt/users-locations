@@ -29,7 +29,7 @@ export const SearchForm = (): JSX.Element => {
   }
 
   return (
-    <Paper className="flex">
+    <Paper className="flex col-span-2 row-span-1 max-h-[10rem]">
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}

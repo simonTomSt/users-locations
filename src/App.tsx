@@ -19,8 +19,10 @@ export const App = () => {
     <MainLayout>
       <SearchList />
       <LastSearchMap />
-      <LastSearchDetails />
       <SearchForm />
+      <LastSearchMap />
+      <LastSearchDetails />
+      <LastSearchDetails />
     </MainLayout>
   )
 }

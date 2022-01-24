@@ -73,6 +73,7 @@ export const selectLastSearchLocationDetails = (state: RootState) => {
 
   return {
     flag: lastLocation.location.country_flag_emoji,
+    country: lastLocation.continent_name,
     capital: lastLocation.location.capital,
     city: lastLocation.city,
     zip: lastLocation.zip,
