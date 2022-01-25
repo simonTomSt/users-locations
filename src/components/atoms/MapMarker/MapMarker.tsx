@@ -5,6 +5,7 @@ type MapMarkerProps = {
   lat: number
   lng: number
 }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const MapMarker = (props: MapMarkerProps) => (
   <LocationMarkerIcon
     width={40}
