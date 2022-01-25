@@ -61,7 +61,7 @@ export const selectCurrentUserLocationDetails = (state: RootState) => {
 
   return {
     flag: userLocation.location.country_flag_emoji,
-    country: userLocation.continent_name,
+    country: userLocation.country_name,
     capital: userLocation.location.capital,
     city: userLocation.city,
     zip: userLocation.zip,
